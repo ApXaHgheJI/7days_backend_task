@@ -19,25 +19,9 @@
 
     <div class="example-wrapper">
         <h1>Hello , Test task #1 ✅</h1>
-
-        {% if formData %}
-        <ul>
-            <li>The time zone {{ formData['timezone']}} has {{ formData['diff_minutes'] }} minutes offset to UTC on the given day at midnight.</li>
-            <li>February in this year is {{ formData['month_feb']}} days long</li>
-            <li>The specified month ({{ formData['month']}}) is {{ formData['month_days']}} days long.</li>
-
-        </ul>
-        {% endif %}
     </div>
     <div class="example-wrapper">
         {{ form(form) }}
     </div>
-    <script>
-        $(document).ready(function () {
-            // you may need to change this code if you are not using Bootstrap Datepicker
-            $('.js-datepicker').datepicker({
-                                               format: 'yyyy-mm-dd'
-                                           });
-        });
-    </script>
+
 {% endblock %}

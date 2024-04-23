@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MyFormController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
+
+        .example-wrapper code {
+            background: #F5F5F5;
+            padding: 2px 6px;
+        }
+    </style>
+
+    <div class="example-wrapper">
+        <h1>Hello , Test task #1 ✅</h1>
+
+        {% if formData %}
+            <ul>
+                <li>The time zone {{ formData['timezone'] }} has {{ formData['diff_minutes'] }} minutes offset to UTC on
+                    the given day at midnight.
+                </li>
+                <li>February in this year is {{ formData['month_feb'] }} days long</li>
+                <li>The specified month ({{ formData['month'] }}) is {{ formData['month_days'] }} days long.</li>
+
+            </ul>
+        {% endif %}
+        <button class="btn btn-primary" onclick="history.back()">Go Back</button>
+    </div>
+{% endblock %}

@@ -14,11 +14,8 @@ class PostManager
         $this->em = $em;
     }
 
-    public function addPost($title, $content)
+    public function addPost($post)
     {
-        $post = new Post();
-        $post->setTitle($title);
-        $post->setContent($content);
         $this->em->persist($post);
         $this->em->flush();
     }

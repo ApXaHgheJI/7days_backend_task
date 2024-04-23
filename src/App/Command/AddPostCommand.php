@@ -2,6 +2,7 @@
 
 namespace App\Command;
 
+use App\Entity\Post;
 use Domain\Post\PostManager;
 use joshtronic\LoremIpsum;
 use Symfony\Component\Console\Command\Command;
@@ -33,7 +34,11 @@ class AddPostCommand extends Command
         $title    = 'Summary ' . $dateTime->format('Y-m-d');
         $content  = $this->loremIpsum->paragraphs(1);
 
-        $this->postManager->addPost($title, $content);
+        $post = new Post();
+        $post->setTitle($title);
+        $post->setContent($content);
+
+        $this->postManager->addPost($post);
 
         $output->writeln('The post has been added.');
 
